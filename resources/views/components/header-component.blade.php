@@ -1,91 +1,55 @@
-<style>
-    #menu {
-        height: calc(100vh - 4rem);
-    }
-</style>
-
-<header class="bg-matrix-footer z-20 sticky top-0" x-data="{ open: false }">
-    <div class="container flex items-center h-16">
-
-        <div class="lg:hidden" >
-            <a class="flex items-center z-20" x-on:click="open = !open">
-                <svg class="h-8 w-8" viewBox="0 0 24 24">
-                    <path fill="#44F24F"
-                    d="M3 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm1 5a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2H4z" />
-                </svg>
-            </a>
+<header x-data="{ open: false }" class="bg-matrix-footer z-20 sticky top-0">
+    <div class="mx-auto px-4 py-2 flex items-center justify-between">
+        <div class="flex items-center">
+            <img src="{{ Storage::url('public/Luis/Neo.jpg') }} " alt="Luis Alberto Garcia Orozco"
+                class="w-12 h-12 mr-2 rounded-full">
+            <span class="text-xl text-matrix-text hidden lg:block">Luis Alberto Garcia Orozco</span>
         </div>
-
-        <div class="hidden lg:block cursor-pointer h-full justify-center px-4 hover:bg-matrix-hover">
-            <a href="" class="text-matrix-text cursor-pointer h-full flex justify-center px-4">
-                <img src="{{ Storage::url('public/Luis/Neo.jpg') }}" alt="Imagen"
-                    class="mx-auto rounded-full border-4 border-matrix-hover">
-                <span class="ml-auto text-lg px-4 py- h-full flex items-center justify-center">
-                    Luis Alberto García Orozco
-                </span>
-            </a>
+        <div class="hidden md:flex items-center space-x-4">
+            <a href="#" class="text-matrix-text text-lg">Sobre mí</a>
+            <a href="#" class="text-matrix-text text-lg">Habilidades</a>
+            <a href="#" class="text-matrix-text text-lg">Proyectos</a>
+            <a href="#" class="text-matrix-text text-lg">Contacto</a>
         </div>
-
-
-        <div class="ml-auto h-full hidden lg:block">
-            <div class="hover:bg-matrix-hover inline-block h-full ">
-                <a class="text-lg pr-3 hover:bg-matrix-hover h-full" href="">Sobre mí</a>
-            </div>
-            <div class="inline-block hover:bg-matrix-hover h-full ">
-                <a class="text-lg pr-3 hover:bg-matrix-hover h-full" href="">Habilidades</a>
-            </div>
-            <div class="inline-block hover:bg-matrix-hover h-full ">
-                <a class="text-lg pr-3 hover:bg-matrix-hover h-full" href="">Proyectos</a>
-            </div>
-            <div class="inline-block hover:bg-matrix-hover h-full ">
-                <a class="text-lg pr-3 hover:bg-matrix-hover h-full" href="">Contacto</a>
+        <button @click="open = !open" class="md:hidden text-white">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+            </svg>
+        </button>
+    </div>
+    <div x-show="open" class="md:hidden bg-gray-700">
+        <div class="mx-auto px-4 py-2 flex items-center space-x-4">
+            <a href="#" class="text-matrix-text text-lg">Sobre mí</a>
+            <a href="#" class="text-matrix-text text-lg">Habilidades</a>
+            <a href="#" class="text-matrix-text text-lg">Proyectos</a>
+            <a href="#" class="text-matrix-text text-lg">Contacto</a>
+        </div>
+        <div class="mx-auto px-4 py-2 flex items-center absolute justify-center">
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-white">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-white">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 17h8m0 0v-8m0 0-8-8M21 3h-8m0 0V.997m0 0L3.586 8.414a2 2 0 000 2.828L12 20.586m9.414-9.414a2 2 0 000-2.828L12 3.414">
+                        </path>
+                    </svg>
+                </a>
+                <a href="#" class="text-white">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
-    <nav id="menu" x-show="open" class="bg-matrix-footer bg-opacity-25 z-20 absolute w-full">
-        <div class="container h-full grid grid-cols-1 bg-matrix-footer">
-            <div class="h-1/2 inline items-center justify-center">
-                <ul>
-                    <li class="px-5 hover:bg-matrix-hover">
-                        <a class="py-2 px-4 text-lg item-center flex" href="">
-                            Sobre mí
-                        </a>
-                    </li>
-                    <li class="px-5 hover:bg-matrix-hover">
-                        <a class="py-2 px-4 text-lg item-center flex" href="">
-                            Habilidades
-                        </a>
-                    </li>
-                    <li class="px-5 hover:bg-matrix-hover">
-                        <a class="py-2 px-4 text-lg item-center flex" href="">
-                            Proyectos
-                        </a>
-                    </li>
-                    <li class="px-5 hover:bg-matrix-hover">
-                        <a class="py-2 px-4 text-lg item-center flex" href="">
-                            Contacto
-                        </a>
-                    </li>
-                </ul>
-                <div class="h-1/2 border-t-2 border-matrix-hover flex ">
-                    <div class="grid grid-cols-2 items-center justify-center">
-
-                        <a href="https://github.com/LuisAlberto22?tab=repositories" class="col-span-1 items-center">
-                            <i class="fa-brands fa-github fa-2xl" style="color: #7fff00;"></i>
-                            GitHub
-                        </a>
-                        <a href="https://www.hackerrank.com/guichos_mx?hr_r=1" class="col-span-1 items-center">
-                            <i class="fa-brands fa-hackerrank fa-2xl" style="color: #7fff00;"></i>
-                            hackerRank
-                        </a>
-                        <a href="https://www.linkedin.com/in/luis-alberto-garcia-orozco-692167216/"
-                            class="col-span-2 items-center justify-center text-center">
-                            <i class="fa-brands fa-linkedin fa-2xl" style="color: #7fff00;"></i>
-                            Linkdln
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
 </header>

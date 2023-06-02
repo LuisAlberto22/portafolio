@@ -20,4 +20,9 @@ class Language extends Model
     {
         return $this->hasMany(Framework::class);
     }
+
+    public function level()
+    {
+        return $this->belongsTo(Level::class);
+    }
 }
