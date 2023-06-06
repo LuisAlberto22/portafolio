@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Framework;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class FrameworkSeeder extends Seeder
@@ -15,12 +14,12 @@ class FrameworkSeeder extends Seeder
     {
         Framework::create([
             'name' => 'Laravel',
-            'logo' => '',
+            'logo' => 'fa-brands fa-laravel',
             'level_id' => '1',
             'language_id' => '3'
         ]);
         Framework::create([
-            'name' => '.Net',
+            'name' => '.Net Framework',
             'logo' => '',
             'level_id' => '1',
             'language_id' => '1'
@@ -36,6 +35,24 @@ class FrameworkSeeder extends Seeder
             'logo' => '',
             'level_id' => '1',
             'language_id' => '3'
+        ]);
+        Framework::create([
+            'name' => 'Tailwind',
+            'logo' => '',
+            'level_id' => '1',
+            'language_id' => '5'
+        ]);
+        Framework::create([
+            'name' => 'Entity Framework',
+            'logo' => '',
+            'level_id' => '1',
+            'language_id' => '1'
+        ]);
+        Framework::create([
+            'name' => 'Alphine',
+            'logo' => '',
+            'level_id' => '1',
+            'language_id' => '6'
         ]);
     }
 }

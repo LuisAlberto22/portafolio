@@ -1,31 +1,16 @@
-<div class="container mx-auto flex justify-center items-center h-screen">
-    <div class="w-full md:w-1/2 flex flex-col md:flex-row items-center">
-        <img src="{{ Storage::url('public/Luis/Neo.jpg') }}" alt="Imagen de presentación"
-            class="w-1/2 md:w-auto rounded-full border-4 border-matrix-components">
-        <div class="p-4">
-            <h1 id="title" class="text-6xl font-italic mb-4 text-matrix-text-bg">Bienvenido....</h1>
-            <p class="text-lg">Aquí va el texto de la carta de presentación. Puedes agregar más párrafos si es necesario.
+<div class="flex bg-matrix-footer h-screen w-full items-center justify-center">
+
+    <div class="flex bg-matrix-footer h-1/2 p-5 w-full justify-start items-center">
+
+        <img src="/storage/Luis/Neo.jpg" class="rounded-full aspect-auto border-4 border-matrix-components w-full object-fill h-50 float-left" alt="">
+        <div>
+            <strong class="text-6xl font-bold text-matrix-text-bg">
+                Bienvenido...
+            </strong>
+            <p class="text-3xl text-justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio molestias cupiditate itaque quam voluptate, dolore sint error debitis voluptas eligendi temporibus deserunt tempora ea praesentium, iusto commodi distinctio. Tempore, molestias.
             </p>
         </div>
     </div>
+
 </div>
-
-@push('scripts')
-    <script>
-        var app = document.getElementById('title');
-
-        var typewriter = new Typewriter(app, {
-            loop: false,
-            delay: 75,
-        });
-
-        console.log(typewriter)
-
-        typewriter
-            .typeString('Bienvenido..')
-            .pauseFor(300)
-            .deleteChars(10)
-
-            .start();
-    </script>
-@endpush

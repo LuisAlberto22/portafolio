@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('proyects', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
+            $table->string('gitHub')->unique();
             $table->string('main_image');
             $table->text('description');
             $table->date('date');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('scope_id');
             $table->foreign('scope_id')->references('id')->on('scopes');
             $table->timestamps();

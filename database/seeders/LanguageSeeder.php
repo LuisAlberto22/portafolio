@@ -15,17 +15,32 @@ class LanguageSeeder extends Seeder
     {
         Language::create([
             'name' => 'C#',
-            'logo' => '',
+            'logo' => 'fa-brands fa-windows',
             'level_id' => '1'
         ]);
         Language::create([
             'name' => 'Java',
-            'logo' => '',
+            'logo' => 'fa-brands fa-java',
             'level_id' => '1'
         ]);
         Language::create([
             'name' => 'PHP',
-            'logo' => '',
+            'logo' => 'fa-brands fa-php',
+            'level_id' => '1'
+        ]);
+        Language::create([
+            'name' => 'HTML',
+            'logo' => 'fa-brands fa-html5',
+            'level_id' => '1'
+        ]);
+        Language::create([
+            'name' => 'CSS',
+            'logo' => 'fa-solid fa-file-code',
+            'level_id' => '1'
+        ]);
+        Language::create([
+            'name' => 'JavaScript',
+            'logo' => 'fa-brands fa-js',
             'level_id' => '1'
         ]);
     }

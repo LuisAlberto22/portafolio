@@ -14,12 +14,8 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'Luis Alberto García Orozco',
             'user' => 'admin',
             'password' => Hash::make('LuisGarciaPW32'),
-            'about_me' => '',
-            'photo' => '',
-            'level_id' => '1'
         ]);
     }
 }

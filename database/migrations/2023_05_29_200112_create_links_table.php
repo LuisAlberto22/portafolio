@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->string('name');
-            $table->string('link_source');
-            $table->string('link');
+            $table->string('url');
+            $table->string('description')->nullable();
             $table->unsignedBigInteger('proyect_id');
             $table->foreign('proyect_id')->references('id')->on('proyects');
             $table->timestamps();

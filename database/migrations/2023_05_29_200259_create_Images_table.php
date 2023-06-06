@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('files', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('link');
-            $table->enum('mime_type',['jpg','png','mp4','mpeg','gif']);
+            $table->enum('mime_type',['jpg','png','gif']);
             $table->unsignedBigInteger('proyect_id');
             $table->foreign('proyect_id')->references('id')->on('proyects');
             $table->timestamps();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('files');
+        Schema::dropIfExists('images');
     }
 };

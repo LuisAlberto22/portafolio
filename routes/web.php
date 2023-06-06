@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProyectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', IndexController::class);
+Route::get('/proyecto/{proyect}', [ProyectController::class,'show'])->name('proyect.show');
 
 Route::get('/login', [LoginController::class, 'logIn'])->name('login');
 

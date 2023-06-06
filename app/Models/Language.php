@@ -16,7 +16,7 @@ class Language extends Model
         return $this->belongsToMany(Proyect::class);
     }
 
-    public function framework()
+    public function frameworks()
     {
         return $this->hasMany(Framework::class);
     }

@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('language_proyect', function (Blueprint $table) {
             $table->unsignedBigInteger("proyect_id");
             $table->unsignedBigInteger("language_id");
+            $table->unsignedBigInteger("framework_id")->nullable();
+            $table->foreign('framework_id')->references('id')->on('frameworks');
             $table->foreign('proyect_id')->references('id')->on('proyects');
             $table->foreign('language_id')->references('id')->on('languages');
             $table->timestamps();

@@ -1,4 +1,4 @@
-<footer class="bg-matrix-footer text-center text-lg py-4 z-10">
+<footer class="bg-matrix-footer text-center text-lg py-4 z-10 mt-auto">
     <div class="grid grid-cols-3 text-center">
         <div class="grid-col-1">
             <a href="https://github.com/LuisAlberto22?tab=repositories">

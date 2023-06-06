@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tecnologies', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('logo');
             $table->unsignedBigInteger('level_id');
             $table->foreign('level_id')->references('id')->on('levels');
